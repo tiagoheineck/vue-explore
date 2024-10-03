@@ -1,0 +1,11 @@
+services:
+  web:
+    image: node:alpine
+    command: npm run dev
+    entrypoint: entrypoint.sh
+    working_dir: /app
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./.docker/entrypoint.sh:/usr/local/bin/entrypoint.sh
+      - ./:/app
